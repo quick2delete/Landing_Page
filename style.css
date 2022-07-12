@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 :root {
   --primary-color: #fff;
   --secondary-color: rgb(250, 119, 59);
@@ -12,19 +13,21 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px 100px;
+  padding: 20px 110px;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 35px;
+  align-self: center;
 }
 
 li {
@@ -35,10 +38,15 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: rgb(230, 53, 8);
+  font-size: 20px;
+}
+
 .links ul {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 30px;
 }
 
 .navbar,
@@ -51,21 +59,43 @@ a {
 /* Section 1 */
 .section1 {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 50px 100px;
+  gap: 50px;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 45px;
 }
 .section1 div {
   width: 500px;
   height: 350px;
 }
 
+.section1 div p {
+  font-weight: lighter;
+  text-align: left;
+}
+
 .main-img {
-  width: 450px;
+  width: 500px;
   height: 250px;
+  border-radius: 3px;
+  border: solid 2px rgb(248, 81, 4) "";
+}
+
+.section1 button {
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  background-color: rgb(230, 53, 8);
+  padding: 8px 35px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.section1 button:hover {
+  transform: translateY(-2px);
 }
 
 /* Section2 */
@@ -75,7 +105,7 @@ h2 {
   justify-content: center;
   align-items: center;
   color: var(--secondary-color);
-  padding: 60px;
+  padding: 50px;
   gap: 40px;
 }
 
@@ -89,6 +119,10 @@ h3 {
   justify-content: center;
   gap: 35px;
   padding-bottom: 60px;
+}
+
+.image img:hover {
+  transform: translateY(-2px);
 }
 
 div p {
@@ -110,35 +144,134 @@ div p {
 .section3 {
   height: 400px;
   background-color: rgb(250, 206, 185);
-  font-size: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: rgba(85, 83, 83, 0.973);
-  font-weight: lighter;
 }
 
 .section3 p:first-child {
+  font-size: 35px;
   font-style: italic;
+  font-weight: lighter;
   width: 800px;
+  align-self: center;
 }
 
 .section3 p:nth-child(2) {
-  width: 450px;
+  width: 800px;
   font-size: 25px;
-  padding-top: 15px;
-  align-self: flex-end;
   font-weight: bold;
+  padding-top: 25px;
+  align-self: flex-end;
 }
 
-/* footer */
+/* Section4, Footer */
 
-.footer {
-  height: 350px;
+.section4 {
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   flex: 1 1 auto;
   flex-wrap: wrap;
+  color: #fff;
+  background-color: var(--secondary-color);
+  margin: 0 275px;
+  border-radius: 10px;
+}
+
+.footer div {
+  height: 140px;
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer p:nth-child(2) {
+  font-weight: lighter;
+}
+.footer button {
+  font-size: 18px;
+  color: #fff;
+  background-color: var(--secondary-color);
+  border: solid 2px #fff;
+  padding: 7px 35px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.footer button:hover {
+  transform: translateY(-2px);
+}
+
+/* Media Query */
+
+@media (max-width: 700px) {
+  .logo {
+    color: rgb(230, 53, 8);
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section1 {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section1 div,
+  .main-img {
+    width: 400px;
+  }
+
+  .section1 div p {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  .section2 div {
+    flex-wrap: wrap;
+  }
+
+  .image img {
+    flex: 1 1 auto;
+  }
+
+  .section3 {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 40px;
+  }
+
+  .section4 {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer {
+    width: 300px;
+    flex: 1 1 auto;
+    align-self: center;
+    margin: 40px;
+    padding: 30px;
+  }
+
+  .footer div {
+    flex: 1 1 auto;
+  }
 }
